@@ -25,7 +25,6 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            position: sticky;
             align-items: center;
             padding: 10px 20px;
             background-color: #1c9e4f;
@@ -46,6 +45,7 @@
         .menu-topo li {
             display: inline-block;
             margin-left: 20px;
+            margin-top: 10px;
         }
 
         .menu-topo li a {
@@ -56,7 +56,7 @@
 
         .menu-topo li a:hover {
             transition: 0.7s all;
-            color: #333;
+            color:#333;
         }
 
         nav {
@@ -65,6 +65,13 @@
             max-width: 1120px;
             margin: auto;
             padding: 1.5rem 10rem;
+        }
+
+        .banner {
+            width: 100%;
+            height: 430px;
+            background: url("sobreFoto.PNG") no-repeat center;
+            background-size: cover;
         }
 
         .logo img {
@@ -95,7 +102,7 @@
             font-weight: bold;
         }
 
-        button {
+        button{
             border-radius: 0.5rem;
             background-color: #1c9e4f;
             color: #fff;
@@ -112,6 +119,7 @@
         button img {
             width: 25px;
             margin: auto;
+            transform: translate("0, 50%");
         }
 
         main {
@@ -128,7 +136,7 @@
             justify-content: space-between;
             align-items: center;
             gap: 6rem;
-            padding: 0 2rem;
+            padding: 0rem 2rem;
             margin: auto;
             overflow: hidden;
         }
@@ -162,7 +170,7 @@
         .lanchas-titulo {
             font-size: 2rem;
             font-weight: 700;
-            color: #FFF2E7;
+            color:#FFF2E7;
         }
 
         .lanchas-card-container {
@@ -196,15 +204,23 @@
             font-size: 1.67rem;
             font-weight: 700;
             text-transform: uppercase;
-            margin-left: 110px;
+            margin-left: 55px;
             margin-bottom: 5px;
         }
 
         .lanchas-descricao {
             color: #C7BAB3;
-            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 1rem;
             font-weight: 400;
+        }
+
+        .video-card {
+            background: #006633;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
         }
 
         .img-pontoon {
@@ -241,7 +257,6 @@
             z-index: 9999;
         }
 
-       
         .banner {
             width: 100%;
             height: 0;
@@ -257,7 +272,6 @@
             height: 100%;
             object-fit: cover;
         }
-
 
         @media (max-width: 768px) {
             header {
@@ -287,7 +301,7 @@
             .lancha-titulo {
                 text-align: center;
                 margin-bottom: -3px;
-                margin-left: 42px;
+                margin-left: 20px;
             }
 
             .img-pontoon {
@@ -297,6 +311,14 @@
 
             .lanchas-titulo {
                 font-size: 1.2rem;
+            }
+
+            .video-card {
+                width: 90%;
+            }
+
+            video {
+                width: 100%;
             }
         }
 
@@ -346,21 +368,32 @@
     </div>
     <main>
         <div class="banner">
-            <img src="inicioFoto.PNG" alt="Imagem Responsiva">
-          </div>
+            <section class="hero">
+            </section>
+        </div>
+        <div class="video-card">
+            <video src="canastraClip.mp4"
+            controls
+            width="500px"
+            >
+            </video>
+        </div>
         <section class="lanchas">
             <header class="lanchas-cabecalho">
-                <h2 class="lanchas-titulo">Confira os nossos modelos</h2>
+                <h2 class="lanchas-titulo">Saiba mais sobre nós</h2>
             </header>
             <div class="lanchas-card-container">
                 <div class="lanchas-card">
                     <header class="lanchas-card-cabecalho">
-                        <h3 class="lancha-titulo">canastra 900</h3>
+                        <div>
+                            <h3 class="lancha-titulo">Canastra Boats</h3>
+                        </div>
                     </header>
-                    <p class="lanchas-descricao">Já pensou navegar com todos seus familiares e amigos, sem perder o conforto, segurança e o luxo?!</p>
-                    <p class="lanchas-descricao">Conheça a Canastra 900</p>
-                    <img class="img-pontoon" src="pootonboatFoto.jpeg">
-                    <a href="potoonBoat.html"><button>Saiba Mais</button></a>
+                    <p class="lanchas-descricao">Um nome em homenagem a beleza e exuberância da Serra da Canastra surge como inspiração para criação de uma marca de Pontoon Boat, modelo de embarcação amada pelos americanos que proporciona segurança, beleza, liberdade e ótimo custo benefício no mundo náutico. 
+                        <br>
+                        A partir dessas primícias a empresa buscou um dos melhores estaleiros do mundo nesse segmento, já consolidado a mais de 15 anos, especialista em Pontoons, certificados com as mais rigorosas inspeções internacionais para ser formar uma parceria exclusiva no Brasil. 
+                        <br>
+                        Baseado nessa mentalidade de qualidade, conforto e segurança a marca Canastra Boat se coloca no mercado, oferecendo um produto de vanguarda com garantias a seus clientes para que vivam o prazer inigualável de navegar em nossas águas.</p>
                 </div>
             </div>
         </section>
@@ -382,7 +415,7 @@
         <h6>A melhor e mais segura linha de barcos do brasil</h6>
     </footer>
     <div class="whats">
-        <a href="https://wa.me/5516992392759?text=Oi, tudo bem? Quero mais informações!" target="_blank">
+        <a href="https://wa.me/5516992392759?text=Oi, tudo bem? Quero mais informações!" target="_blanck">
             <img src="whatsapp.png" width="75px" alt="Fale conosco pelo whatsapp" title="Fale conosco pelo whatsapp" />
         </a>
     </div>
