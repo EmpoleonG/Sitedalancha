@@ -9,16 +9,11 @@
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
         body {
-            font-family: Arial, sans-serif;
             color: #000000;
             background-color: #f0f0f0;
-        }
-
-        html {
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-weight: 500;
         }
 
         .background {
@@ -26,27 +21,55 @@
         }
 
         header {
+            height: 60px;
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            position: center;
+            position: sticky;
             align-items: center;
             padding: 10px 20px;
             background-color: #1c9e4f;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        .header-menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .menu-topo {
+            text-align: right;
+        }
+
+        .menu-topo li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .menu-topo li a {
+            text-decoration: none;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .menu-topo li a:hover {
+            transition: 0.7s all;
+            color: #333;
+        }
+
         nav {
             display: flex;
             align-items: center;
-            justify-items: center;
             max-width: 1120px;
             margin: auto;
             padding: 1.5rem 10rem;
         }
 
         .logo img {
-            height: 150px;
+            height: 100px;
+            margin-top: -55px;
         }
 
         ul {
@@ -59,6 +82,7 @@
             padding: 0;
             display: flex;
             gap: 1.25rem;
+            margin-top: -10px;
         }
 
         .links li {
@@ -71,7 +95,7 @@
             font-weight: bold;
         }
 
-        button{
+        button {
             border-radius: 0.5rem;
             background-color: #1c9e4f;
             color: #fff;
@@ -79,21 +103,21 @@
             padding: 1rem;
         }
 
+        button:hover {
+            background: #333;
+            transition: 0.7s all;
+            box-shadow: 2px 2px 2px black;
+        }
+
         button img {
             width: 25px;
             margin: auto;
-            transform: translate("0, 50%");
         }
 
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .principal {
-            background: #006633;
-            width: 100%;
         }
 
         .hero {
@@ -104,55 +128,14 @@
             justify-content: space-between;
             align-items: center;
             gap: 6rem;
-            padding: 0rem 2rem;
+            padding: 0 2rem;
             margin: auto;
-            overflow: clip;
-        }
-
-        .hero-conteudo {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        .destaque {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 1rem;
+            overflow: hidden;
         }
 
         .cinza {
-            color:#303633;
+            color: #303633;
             text-transform: uppercase;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-
-        .hero-subtitulo {
-            color: #C7BAB3;
-            font-family: Inter;
-            font-size: 1.5rem;
-            font-weight: 400;
-        }
-
-        .hero-imagens-container {
-            max-width: 45%;
-            column-count: 4;
-            column-gap: 1rem;
-            margin: -1rem;
-        }
-
-        .hero-imagens-container > figure > img {
-            width: 115%;
-            border-radius: 0.5rem;
-            height: 105px;
-        }
-
-        h1 {
-            color: #fff;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 3.5rem;
-            font-weight: 800;
         }
 
         hr {
@@ -173,15 +156,13 @@
         .lanchas-cabecalho {
             display: flex;
             flex-direction: column;
-            align-items: center;
             border-radius: 0.5rem;
         }
 
         .lanchas-titulo {
-            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 2rem;
             font-weight: 700;
-            color:#FFF2E7;
+            color: #FFF2E7;
         }
 
         .lanchas-card-container {
@@ -212,10 +193,11 @@
 
         .lancha-titulo {
             color: #FFF2E7;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 1.5rem;
+            font-size: 1.67rem;
             font-weight: 700;
             text-transform: uppercase;
+            margin-left: 110px;
+            margin-bottom: 5px;
         }
 
         .lanchas-descricao {
@@ -243,10 +225,8 @@
 
         h6 {
             color: #FFF2E7;
-            font-family: Georgia, 'Times New Roman', Times, serif;
             font-size: 0.75rem;
             font-weight: 500;
-            gap: 20px;
             text-transform: uppercase;
         }
 
@@ -261,24 +241,32 @@
             z-index: 9999;
         }
 
+       
+        .banner {
+            width: 100%;
+            height: 0;
+            padding-bottom: 37.5%;
+            position: relative;
+        }
+
+        .banner img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
         @media (max-width: 768px) {
             header {
-                flex-direction: column;
+                flex-direction: row;
+                padding: 1rem;
             }
 
             nav {
                 padding: 1rem;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                height: auto;
-            }
-
-            .hero-imagens-container {
-                max-width: 100%;
-                column-count: 2;
             }
 
             .lanchas-card-container {
@@ -287,9 +275,19 @@
                 align-items: center;
             }
 
+            .lanchas-titulo {
+                margin-top: 3px;
+            }
+
             .lanchas-card {
                 flex-basis: 100%;
-                width: 90%;
+                width: 100%;
+            }
+
+            .lancha-titulo {
+                text-align: center;
+                margin-bottom: -3px;
+                margin-left: 42px;
             }
 
             .img-pontoon {
@@ -297,23 +295,12 @@
                 height: auto;
             }
 
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitulo {
-                font-size: 1.2rem;
-            }
-
             .lanchas-titulo {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .hero-imagens-container {
-                column-count: 1;
-            }
 
             .links {
                 flex-direction: column;
@@ -323,14 +310,6 @@
 
             .links li {
                 margin: 0;
-            }
-
-            .hero-subtitulo {
-                font-size: 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
             }
 
             .lanchas-titulo {
@@ -356,7 +335,7 @@
                     <img src="logo.png" alt="logo">
                 </div>
             </nav>
-            <nav>
+            <nav class="menu-topo grid-12">
                 <ul class="links">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre-cb.html">Sobre</a></li>
@@ -366,15 +345,9 @@
         </header>
     </div>
     <main>
-        <div class="principal">
-            <section class="hero">
-                <header class="hero-conteudo">
-                    <h1>CANASTRA BOATS</h1>
-                    <hr/>
-                    <h2 class="hero-subtitulo">Compre as melhores lanchas da região</h2>
-                </header>
-            </section>
-        </div>
+        <div class="banner">
+            <img src="inicioFoto.PNG" alt="Imagem Responsiva">
+          </div>
         <section class="lanchas">
             <header class="lanchas-cabecalho">
                 <h2 class="lanchas-titulo">Confira os nossos modelos</h2>
@@ -382,14 +355,12 @@
             <div class="lanchas-card-container">
                 <div class="lanchas-card">
                     <header class="lanchas-card-cabecalho">
-                        <div>
-                            <h3 class="lancha-titulo">canastra 900</h3>
-                        </div>
+                        <h3 class="lancha-titulo">canastra 900</h3>
                     </header>
-                    <p class="lanchas-descricao">Já pensou navegar com todos seus familiares e amigos,sem perder o conforto ,segurança e o luxo?!</p>
+                    <p class="lanchas-descricao">Já pensou navegar com todos seus familiares e amigos, sem perder o conforto, segurança e o luxo?!</p>
                     <p class="lanchas-descricao">Conheça a Canastra 900</p>
-                    <img class="img-pontoon" src="hero-banner5.jpg">
-                    <a href="Indeex.html"><button>Saiba Mais</button></a>
+                    <img class="img-pontoon" src="pootonboatFoto.jpeg">
+                    <a href="potoonBoat.html"><button>Saiba Mais</button></a>
                 </div>
             </div>
         </section>
@@ -400,9 +371,9 @@
             <img src="logo1.png" alt="logo">
         </div>
         <br>
-        <h6> rua bruno vicente da luz, 95 espinheiros</h6>
+        <h6> rua rio madeira, 1000 - residencial amazonas</h6>
         <br>
-        <h6>cep 88317-020</h6>
+        <h6>cep 14406-028</h6>
         <br>
         <h6>+55 (16) 992392759</h6>
         <br>
@@ -411,7 +382,7 @@
         <h6>A melhor e mais segura linha de barcos do brasil</h6>
     </footer>
     <div class="whats">
-        <a href="https://wa.me/5516992392759?text=Oi, tudo bem? Quero mais informações!" target="_blanck">
+        <a href="https://wa.me/5516992392759?text=Oi, tudo bem? Quero mais informações!" target="_blank">
             <img src="whatsapp.png" width="75px" alt="Fale conosco pelo whatsapp" title="Fale conosco pelo whatsapp" />
         </a>
     </div>
