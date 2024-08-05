@@ -76,7 +76,7 @@
             list-style: none;
         }
 
-        .links {
+        .nav-link {
             list-style: none;
             margin: 0;
             padding: 0;
@@ -85,17 +85,17 @@
             margin-top: -10px;
         }
 
-        .links li {
+        .nav-link li {
             margin: 0 10px;
         }
 
-        .links a {
+        .nav-link a {
             text-decoration: none;
             color: #fff;
             font-weight: bold;
         }
 
-        button {
+        .saibamais {
             border-radius: 0.5rem;
             background-color: #1c9e4f;
             color: #fff;
@@ -103,7 +103,7 @@
             padding: 1rem;
         }
 
-        button:hover {
+        .saibamais:hover {
             background: #333;
             transition: 0.7s all;
             box-shadow: 2px 2px 2px black;
@@ -118,19 +118,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .hero {
-            max-width: 1120px;
-            height: 60vh;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: 6rem;
-            padding: 0 2rem;
-            margin: auto;
-            overflow: hidden;
         }
 
         .cinza {
@@ -258,6 +245,24 @@
             object-fit: cover;
         }
 
+        .hamburguer {
+            display: none;
+            border: none;
+            background: none;
+            border-top: 3px solid #fff;
+            cursor: pointer;
+        }
+
+        .hamburguer::before,
+        .hamburguer::after {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: #FFF;
+            margin-top: 5px;
+        }
+
 
         @media (max-width: 768px) {
             header {
@@ -299,20 +304,41 @@
                 font-size: 1.2rem;
             }
 
-            .links {
-                flex-direction: row;
+            .nav-link {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                background: #1c9e4f;
+                clip-path: circle(100px at 90% -15%);
+                transition: 1s ease-out;
+
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                gap: 0;
+                pointer-events: none;
+            }
+
+            .nav.active .nav-link {
+                clip-path: circle(1500px at 90% -15%);
+                pointer-events: all;
+            }
+
+            .hamburguer {
+                display: block;
             }
         }
 
         @media (max-width: 480px) {
 
-            .links {
+            .nav-link {
                 flex-direction: column;
                 align-items: center;
                 gap: 0.5rem;
             }
 
-            .links li {
+            .nav-link li {
                 margin: 0;
             }
 
@@ -330,6 +356,9 @@
             }
         }
     </style>
+
+    <script defer src="mobile-navbar.js"></script>
+
 </head>
 <body>
     <div class="background">
@@ -340,7 +369,8 @@
                 </div>
             </nav>
             <nav class="menu-topo grid-12">
-                <ul class="links">
+                <button class="hamburguer"></button>
+                <ul class="nav-link">
                     <li><a href="index.html">Início</a></li>
                     <li><a href="sobre-cb.html">Sobre</a></li>
                     <li><a href="produtos-cb.html">Produtos</a></li>
@@ -364,7 +394,7 @@
                     <p class="lanchas-descricao">Já pensou navegar com todos seus familiares e amigos, sem perder o conforto, segurança e o luxo?!</p>
                     <p class="lanchas-descricao">Conheça a Canastra 900</p>
                     <img class="img-pontoon" src="pootonboatFoto.jpeg">
-                    <a href="potoonBoat.html"><button>Saiba Mais</button></a>
+                    <a href="potoonBoat.html"><button class="saibamais">Saiba Mais</button></a>
                 </div>
             </div>
         </section>
